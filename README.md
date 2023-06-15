@@ -1,10 +1,15 @@
-# Scotland's Population 2020 - The Registrar General's Annual Review of Demographic Trends
+# Scotland's Population 2021 - The Registrar General's Annual Review of Demographic Trends
 
-**Published**: 31 August 2021
+**Published**: 31 August 2022
 
 ## Scripts explained
 
 ### 0_define_variables.R
+
+* Calls libraries
+* Creates Highcharts theme
+* Defines theme elements
+* Defines file paths
 
 ### 1_read_data.R
 
@@ -13,7 +18,7 @@
 
 ### 2_read_text.R
 
-* For reading the input text from `data/NRS - RGAR 2020 - 3 - Create - 3 - Final - Text spreadsheet.xlsx` and crteating the fuction `text_output()` function.
+* For reading the input text from `data/NRS - 2 - Create - 1 - data - text.xlsx` and crteating the fuction `text_output()` function.
 * This is mostly the same for the PDF and HTML versions so any changes to this file will need to be added to the matching file in `/pdf_scripts/2_read_text.R`
 * The difference is that the function does not convert text to HTML for the PDF version
  
@@ -28,11 +33,11 @@
 
 ### HTML version
 
-1. Knit from `RGAR_2020.Rmd`
+1. Knit from `RGAR_2021.Rmd`
 
 ### PDF version
 
-1. Knit from `RGAR_2020.Rmd`
+1. Knit from `RGAR_2021_pdf.Rmd` (Does not work on SCOTS)
 
 ## Updating the text input spreadsheet
 
@@ -56,7 +61,7 @@
 ### H tags	
 
 * Subtitles are *H3*
-* If there's new text that needs to be *H4* or smaller create a new column named something like *subheading_2* then let Rhi know - and I can add it to the function
+* If there's new text that needs to be *H4* or smaller create a new column named something like *subheading_2* (would need to be added to the `text_output()` function
 * Currently all subtitles are **H3**
 * **H2** is for chapter names and these are in the markdown
 
